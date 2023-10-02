@@ -3,29 +3,37 @@ import random
 
 first_list = []
 n = 10
-while True:
+i = 0
+while i < n:
     for i in range(n):
-        first_list.append(random.randint(1, 10))
+        first_list.append(random.randint(1, 100))
+    i += 1
     print(first_list)
     break
 first_list.sort()
-print(first_list[-1])
-
+print("Largest number", first_list[-1])
 
 # Task 2
 
 first_list = []
-second_list = []
-c = 10
-while True:
-    for i in range(c):
-        first_list.append(random.randint(1, 10))
-        second_list.append(random.randint(1, 10))
-    print(first_list)
-    print(second_list)
-    break
-print(set(first_list + second_list))
+i = 0
+while i < 10:
+    num = random.randint(1, 10)
+    first_list.append(num)
+    i += 1
 
+second_list = []
+i = 0
+while i < 10:
+    num = random.randint(1, 10)
+    second_list.append(num)
+    i += 1
+
+third_list = list(set(first_list) & set(second_list))
+
+print("First list", first_list)
+print("Second list", second_list)
+print("Third list", third_list)
 
 # Task 3
 
