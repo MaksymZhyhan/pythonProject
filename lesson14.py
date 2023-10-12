@@ -51,12 +51,12 @@ print("All good")
 
 # Task3
 
-def arg_rules(type_: type, max_length: int, contains: list):
+def arg_rules(type_: str, max_length: int, contains: list):
     def decorator(func):
         def wrapper(name):
             if len(name) > max_length:
                 return False
-            if not isinstance(name, type_):
+            if not isinstance(name, str):
                 return False
             for item in contains:
                 if item not in name:
