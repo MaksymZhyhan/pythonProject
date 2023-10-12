@@ -56,7 +56,7 @@ def arg_rules(type_: str, max_length: int, contains: list):
         def wrapper(name):
             if len(name) > max_length:
                 return False
-            if not isinstance(name, str):
+            if not isinstance(name, type_):
                 return False
             for item in contains:
                 if item not in name:
