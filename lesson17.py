@@ -36,7 +36,6 @@ class Author:
         self.name = name
         self.country = country
         self.birthday = birthday
-        self.books = []
 
     def __repr__(self):
         return f"Author ({self.name}, {self.country}, {self.birthday})"
@@ -46,12 +45,14 @@ class Author:
 
 
 class Book:
-    all_existing_books = 0
+    
 
     def __init__(self, name, year, author):
         self.name = name
         self.year = year
         self.author = author
+        self.books = []
+        all_existing_books = 0
 
     all_existing_books += 1
 
