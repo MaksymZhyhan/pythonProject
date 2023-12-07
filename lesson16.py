@@ -184,8 +184,10 @@ assert s.get_product_info("Ramen") == ("Ramen", 290)
 # Task 4
 
 class CustomException(Exception):
-    def __init__(self, msg):
-        super().__init__(msg)
+    def __init__(self, *args):
+        super().__init__(*args)
+        if args:
+            msg = args[0]
         self.log_error(msg)
 
     def log_error(self, msg):
@@ -195,6 +197,6 @@ class CustomException(Exception):
 
 try:
 
-    raise CustomException("This is a custom exception")
+    raise CustomException("This is a message")
 except CustomException as e:
     print(f"Custom exception{e}")
