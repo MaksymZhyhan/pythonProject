@@ -9,8 +9,8 @@ class Person:
 
 
 class Student(Person):
-    def __init__(self, course, name, age):
-        super().__init__(name, age)
+    def __init__(self, course, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.course = course
 
     def study(self):
